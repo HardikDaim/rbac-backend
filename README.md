@@ -3,7 +3,7 @@
 ### 1. Clone the Repository
 ```bash
 git clone https://github.com/HardikDaim/rbac-backend.git
-cd rbac-assignment-backend
+cd rbac-backend
 ```
 
 ### 2. Install Dependencies
