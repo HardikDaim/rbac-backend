@@ -37,7 +37,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 connectDB();
 
 app.get("/", (req, res) => {
-  res.send("Welcome to Hardik's Server");
+  res.json({ message: "Server is Running" });
 });
 
 // API Routes
