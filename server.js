@@ -36,6 +36,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // Database Connection
 connectDB();
 
+app.get("/", (req, res) => {
+  res.send("Welcome to Hardik's Server");
+});
+
 // API Routes
 app.use("/api/users", userRoutes);
 app.use("/api/roles", roleRoutes);
