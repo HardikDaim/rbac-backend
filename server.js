@@ -17,12 +17,13 @@ const allowedOrigins =
     : [process.env.LOCAL_URL];
 
 const corsOptions = {
-  origin: function (origin, callback) {
-    if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
-      // Allow requests with no origin (like mobile apps or Postman)
-      callback(null, true);
+  oorigin: function (origin, callback) {
+    // If no origin (for Postman or mobile apps), allow the request
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true); // Allow request
     } else {
-      callback(new Error("Not allowed by CORS"));
+      console.log(`Blocked by CORS: ${origin}`); // Log the blocked origin
+      callback(new Error("Not allowed by CORS")); // Reject request
     }
   },
 };
